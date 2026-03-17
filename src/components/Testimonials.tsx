@@ -19,39 +19,38 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section className="py-32 md:py-44 border-t border-[#2D2926]/[0.06]">
+    <section className="py-32 md:py-44 border-t border-white/[0.04]">
       <div className="max-w-[1200px] mx-auto px-6">
         <motion.p
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-[13px] tracking-[0.25em] uppercase text-[#FF6B5A] font-medium mb-20 md:mb-28"
+          className="text-[12px] tracking-[0.3em] uppercase text-[#FF6B5A] font-medium mb-20 md:mb-28"
         >
           What people say
         </motion.p>
 
-        {/* Editorial testimonial layout — large quotes, generous space */}
         <div className="space-y-20 md:space-y-28">
           {testimonials.map((t, i) => (
             <motion.div
               key={t.name}
-              initial={{ y: 30, opacity: 0 }}
+              initial={{ y: 24, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-              className={`grid grid-cols-1 md:grid-cols-12 gap-6 ${
-                i % 2 === 0 ? "" : "md:text-right"
+              className={`grid grid-cols-1 md:grid-cols-12 ${
+                i % 2 === 1 ? "md:text-right" : ""
               }`}
             >
-              <div className={`md:col-span-8 ${i % 2 === 1 ? "md:col-start-5" : ""}`}>
+              <div className={`md:col-span-9 ${i % 2 === 1 ? "md:col-start-4" : ""}`}>
                 <p
-                  className="text-xl md:text-[1.75rem] font-light leading-relaxed text-[#2D2926] tracking-[-0.01em]"
+                  className="text-xl md:text-[1.75rem] font-light leading-[1.5] text-[#F5F5F3]/80 tracking-[-0.01em]"
                   style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
                 >
                   &ldquo;{t.text}&rdquo;
                 </p>
-                <p className="mt-6 text-[13px] text-[#9C958E] font-medium tracking-wide">
+                <p className="mt-6 text-[12px] tracking-[0.15em] uppercase text-[#555] font-medium">
                   {t.name}
                 </p>
               </div>

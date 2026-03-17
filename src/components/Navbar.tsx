@@ -12,25 +12,25 @@ export default function Navbar() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8, delay: 0.2 }}
-        className="fixed top-0 left-0 right-0 z-40 bg-[#FFFCF8]/80 backdrop-blur-2xl border-b border-[#2D2926]/[0.04]"
+        className="fixed top-0 left-0 right-0 z-40 bg-[#0A0A0A]/80 backdrop-blur-2xl border-b border-white/[0.04]"
       >
-        <div className="max-w-[1200px] mx-auto px-6 flex items-center justify-between h-16">
+        <div className="max-w-[1200px] mx-auto px-6 flex items-center justify-between h-14">
           <a href="#" className="flex items-center gap-2">
-            <div className="w-7 h-7 rounded-lg bg-[#FF6B5A] flex items-center justify-center">
-              <span className="text-white text-xs font-bold">W</span>
+            <div className="w-6 h-6 rounded-lg bg-[#FF6B5A] flex items-center justify-center">
+              <span className="text-white text-[10px] font-bold">W</span>
             </div>
-            <span className="text-[15px] font-semibold tracking-tight text-[#2D2926]">WeChef</span>
+            <span className="text-[14px] font-semibold tracking-tight text-[#F5F5F3]">WeChef</span>
           </a>
 
-          <div className="hidden md:flex items-center gap-10 text-[13px] font-medium text-[#9C958E]">
-            <a href="#how-it-works" className="transition-colors duration-300 hover:text-[#2D2926]">How it works</a>
-            <a href="#features" className="transition-colors duration-300 hover:text-[#2D2926]">Features</a>
-            <a href="#download" className="transition-colors duration-300 hover:text-[#2D2926]">Download</a>
+          <div className="hidden md:flex items-center gap-10 text-[13px] font-medium text-[#555]">
+            <a href="#how-it-works" className="transition-colors duration-300 hover:text-[#F5F5F3]">How it works</a>
+            <a href="#features" className="transition-colors duration-300 hover:text-[#F5F5F3]">Features</a>
+            <a href="#download" className="transition-colors duration-300 hover:text-[#F5F5F3]">Download</a>
           </div>
 
           <a
             href="#download"
-            className="hidden md:inline-flex text-[13px] font-semibold text-[#FF6B5A] hover:text-[#E5554A] transition-colors"
+            className="hidden md:inline-flex text-[13px] font-semibold text-[#FF6B5A] hover:text-[#FF8575] transition-colors"
           >
             Get the app
           </a>
@@ -42,11 +42,11 @@ export default function Navbar() {
           >
             <motion.span
               animate={menuOpen ? { rotate: 45, y: 5 } : { rotate: 0, y: 0 }}
-              className="w-5 h-[1.5px] bg-[#2D2926] block origin-center"
+              className="w-5 h-[1.5px] bg-[#F5F5F3] block origin-center"
             />
             <motion.span
               animate={menuOpen ? { rotate: -45, y: -3 } : { rotate: 0, y: 0 }}
-              className="w-5 h-[1.5px] bg-[#2D2926] block origin-center"
+              className="w-5 h-[1.5px] bg-[#F5F5F3] block origin-center"
             />
           </button>
         </div>
@@ -58,8 +58,7 @@ export default function Navbar() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.25 }}
-            className="fixed inset-0 z-30 bg-[#FFFCF8] flex flex-col items-center justify-center gap-10 md:hidden"
+            className="fixed inset-0 z-30 bg-[#0A0A0A]/98 backdrop-blur-3xl flex flex-col items-center justify-center gap-10 md:hidden"
           >
             {["How it works", "Features", "Download"].map((item, i) => (
               <motion.a
@@ -70,7 +69,8 @@ export default function Navbar() {
                 exit={{ y: 8, opacity: 0 }}
                 transition={{ delay: i * 0.06, duration: 0.35 }}
                 onClick={() => setMenuOpen(false)}
-                className="text-2xl font-medium text-[#2D2926]"
+                className="text-2xl font-light text-[#F5F5F3]"
+                style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
               >
                 {item}
               </motion.a>

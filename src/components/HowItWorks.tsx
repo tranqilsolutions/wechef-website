@@ -25,7 +25,7 @@ const steps = [
 
 export default function HowItWorks() {
   return (
-    <section id="how-it-works" className="py-32 md:py-44">
+    <section id="how-it-works" className="py-32 md:py-44 border-t border-white/[0.04]">
       <div className="max-w-[1200px] mx-auto px-6">
         <motion.div
           initial={{ opacity: 0 }}
@@ -34,19 +34,19 @@ export default function HowItWorks() {
           transition={{ duration: 0.8 }}
           className="mb-24 md:mb-32"
         >
-          <p className="text-[13px] tracking-[0.25em] uppercase text-[#FF6B5A] font-medium mb-5">
+          <p className="text-[12px] tracking-[0.3em] uppercase text-[#FF6B5A] font-medium mb-5">
             How it works
           </p>
           <h2
-            className="text-3xl md:text-[3.2rem] font-light tracking-[-0.02em] leading-[1.1] text-[#2D2926]"
+            className="text-3xl md:text-[3.5rem] font-light tracking-[-0.03em] leading-[1.05] text-[#F5F5F3]"
             style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
           >
             Three steps from<br />
-            scroll to kitchen.
+            <span className="italic text-[#8A8A8A]">scroll to kitchen.</span>
           </h2>
         </motion.div>
 
-        {/* Editorial zig-zag layout */}
+        {/* Editorial zig-zag */}
         <div className="space-y-28 md:space-y-40">
           {steps.map((step, i) => (
             <motion.div
@@ -55,33 +55,34 @@ export default function HowItWorks() {
               whileInView={{ y: 0, opacity: 1 }}
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-              className={`grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16 items-center ${
-                i % 2 === 1 ? "md:direction-rtl" : ""
-              }`}
+              className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16 items-center"
             >
-              {/* Image — full-bleed feel */}
+              {/* Image */}
               <div className={`md:col-span-7 ${i % 2 === 1 ? "md:order-2" : ""}`}>
-                <div className="rounded-3xl overflow-hidden aspect-[4/3]">
+                <div className="rounded-2xl overflow-hidden aspect-[4/3] bg-[#141414]">
                   <img
                     src={step.image}
                     alt=""
-                    className="w-full h-full object-cover hover:scale-[1.03] transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]"
+                    className="w-full h-full object-cover opacity-80 hover:opacity-100 hover:scale-[1.03] transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]"
                   />
                 </div>
               </div>
 
               {/* Text */}
               <div className={`md:col-span-5 ${i % 2 === 1 ? "md:order-1" : ""}`}>
-                <span className="text-[11px] tracking-[0.2em] uppercase text-[#9C958E] font-medium">
-                  Step {step.number}
-                </span>
+                <div className="flex items-center gap-4 mb-6">
+                  <span className="text-[11px] tracking-[0.2em] uppercase text-[#555] font-medium">
+                    Step {step.number}
+                  </span>
+                  <span className="flex-1 h-[1px] bg-white/[0.06]" />
+                </div>
                 <h3
-                  className="mt-4 text-2xl md:text-3xl font-light tracking-[-0.02em] text-[#2D2926]"
+                  className="text-2xl md:text-3xl font-light tracking-[-0.02em] text-[#F5F5F3]"
                   style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
                 >
                   {step.title}
                 </h3>
-                <p className="mt-4 text-[#9C958E] text-[15px] leading-relaxed max-w-sm">
+                <p className="mt-4 text-[#8A8A8A] text-[15px] leading-relaxed max-w-sm">
                   {step.description}
                 </p>
               </div>
