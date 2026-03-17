@@ -1,14 +1,16 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-cream: #FDFBF7;
-  --color-cream-dark: #F5F0E8;
-  --color-warm-gray: #8A8175;
-  --color-charcoal: #1A1A17;
-  --color-accent: #C2491D;
-  --color-accent-light: #E8673A;
-  --color-sage: #7A8B6F;
-  --font-sans: var(--font-geist);
+  --color-cream: #FFF8F0;
+  --color-warm-white: #FFFCF8;
+  --color-coral: #FF6B5A;
+  --color-coral-dark: #E5554A;
+  --color-charcoal: #2D2926;
+  --color-gold: #F5C156;
+  --color-sage: #7BAE7F;
+  --color-muted: #9C958E;
+  --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-serif: 'Playfair Display', Georgia, serif;
 }
 
 html {
@@ -16,30 +18,22 @@ html {
 }
 
 body {
-  background: #FDFBF7;
-  color: #1A1A17;
-  font-family: var(--font-geist), system-ui, sans-serif;
+  background: #FFFCF8;
+  color: #2D2926;
 }
 
-/* Subtle grain overlay */
-body::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: 50;
-  pointer-events: none;
-  opacity: 0.02;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+::selection {
+  background: #FF6B5A20;
+  color: #2D2926;
 }
 
-/* Custom scrollbar */
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 4px;
 }
 ::-webkit-scrollbar-track {
   background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: #C2491D40;
+  background: #FF6B5A30;
   border-radius: 999px;
 }

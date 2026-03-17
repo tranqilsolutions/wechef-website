@@ -1,123 +1,85 @@
 "use client";
 
 import { motion } from "framer-motion";
-import {
-  InstagramLogo,
-  TiktokLogo,
-  YoutubeLogo,
-  Timer,
-  ForkKnife,
-  BookmarkSimple,
-  Translate,
-  Scales,
-} from "@phosphor-icons/react";
 
 const features = [
   {
-    icon: InstagramLogo,
-    title: "Instagram reels",
+    title: "Instagram Reels",
     desc: "Drop a reel link. We grab the recipe from caption and audio.",
-    span: "col-span-1",
   },
   {
-    icon: TiktokLogo,
-    title: "TikTok videos",
+    title: "TikTok Videos",
     desc: "Works with any cooking TikTok. Even the ones with no written recipe.",
-    span: "col-span-1",
   },
   {
-    icon: YoutubeLogo,
-    title: "YouTube shorts & videos",
-    desc: "Full-length cooking videos? We handle those too.",
-    span: "col-span-1",
+    title: "YouTube",
+    desc: "Full-length cooking videos and shorts. We handle both.",
   },
   {
-    icon: Timer,
-    title: "Smart timing",
-    desc: "We detect cook times, rest periods, and prep steps automatically.",
-    span: "col-span-1",
+    title: "Smart Timing",
+    desc: "Cook times, rest periods, and prep steps detected automatically.",
   },
   {
-    icon: Scales,
-    title: "Unit conversion",
-    desc: "Switch between metric and imperial. Adjust serving sizes on the fly.",
-    span: "col-span-1",
+    title: "Unit Conversion",
+    desc: "Switch metric and imperial. Adjust serving sizes instantly.",
   },
   {
-    icon: BookmarkSimple,
-    title: "Organize everything",
-    desc: "Tag, folder, search. Build your personal cookbook the way you think.",
-    span: "col-span-1",
+    title: "Collections",
+    desc: "Organize by tag, folder, or mood. Your cookbook, your way.",
   },
 ];
 
 export default function Features() {
   return (
-    <section
-      id="features"
-      className="py-32 md:py-40 bg-gradient-to-b from-[#FDFBF7] via-white to-[#FDFBF7]"
-    >
-      <div className="max-w-[1400px] mx-auto px-6 md:px-12">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16 items-start">
-          {/* Left column — sticky header */}
-          <motion.div
-            initial={{ y: 24, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.7, ease: [0.32, 0.72, 0, 1] }}
-            className="md:col-span-5 md:sticky md:top-40"
+    <section id="features" className="py-32 md:py-44 bg-[#2D2926]">
+      <div className="max-w-[1200px] mx-auto px-6">
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8 }}
+          className="mb-20 md:mb-28"
+        >
+          <p className="text-[13px] tracking-[0.25em] uppercase text-[#FF6B5A] font-medium mb-5">
+            Features
+          </p>
+          <h2
+            className="text-3xl md:text-[3.2rem] font-light tracking-[-0.02em] leading-[1.1] text-white"
+            style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
           >
-            <span className="inline-flex items-center rounded-full bg-[#C2491D]/8 px-4 py-1.5 text-[11px] uppercase tracking-[0.2em] font-medium text-[#C2491D]">
-              Features
-            </span>
-            <h2 className="mt-6 text-3xl md:text-5xl font-bold tracking-tighter leading-[1.05]">
-              Built for people
-              <br />
-              who actually cook.
-            </h2>
-            <p className="mt-5 text-[#8A8175] text-lg leading-relaxed max-w-[40ch]">
-              Not another meal planning app. WeChef is for the person
-              who scrolls past 50 recipes a day and cooks the ones that
-              stop them mid-scroll.
-            </p>
+            Built for people<br />
+            who actually cook.
+          </h2>
+          <p className="mt-5 text-[#9C958E] text-base leading-relaxed max-w-md">
+            Not another meal planner. WeChef is for the person who
+            scrolls past 50 recipes and cooks the ones that stop them mid-scroll.
+          </p>
+        </motion.div>
 
-            {/* Platform logos */}
-            <div className="mt-10 flex items-center gap-6 text-zinc-300">
-              <InstagramLogo size={32} weight="fill" />
-              <TiktokLogo size={32} weight="fill" />
-              <YoutubeLogo size={32} weight="fill" />
-            </div>
-          </motion.div>
-
-          {/* Right column — feature grid */}
-          <div className="md:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {features.map((feature, i) => (
-              <motion.div
-                key={feature.title}
-                initial={{ y: 32, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                viewport={{ once: true, margin: "-60px" }}
-                transition={{
-                  duration: 0.6,
-                  delay: i * 0.08,
-                  ease: [0.32, 0.72, 0, 1],
-                }}
-                className="group rounded-[1.5rem] bg-white/70 p-1 ring-1 ring-zinc-200/20 hover:ring-zinc-200/50 transition-all duration-500"
-              >
-                <div className="rounded-[calc(1.5rem-4px)] bg-white p-6 h-full shadow-[inset_0_1px_0_rgba(255,255,255,0.6)] transition-all duration-500 group-hover:shadow-[0_8px_32px_-8px_rgba(0,0,0,0.06)]">
-                  <div className="w-11 h-11 rounded-xl bg-[#FDFBF7] flex items-center justify-center mb-5 transition-colors duration-500 group-hover:bg-[#C2491D]/8">
-                    <feature.icon
-                      size={22}
-                      weight="duotone"
-                      className="text-[#8A8175] transition-colors duration-500 group-hover:text-[#C2491D]"
-                    />
-                  </div>
-                  <h3 className="text-base font-semibold tracking-tight">{feature.title}</h3>
-                  <p className="mt-2 text-sm text-[#8A8175] leading-relaxed">{feature.desc}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
+        {/* Minimal grid — no cards, no borders, just text and space */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-16 gap-y-16">
+          {features.map((feature, i) => (
+            <motion.div
+              key={feature.title}
+              initial={{ y: 24, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{
+                duration: 0.6,
+                delay: i * 0.07,
+                ease: [0.22, 1, 0.36, 1],
+              }}
+              className="group"
+            >
+              <div className="w-8 h-[1px] bg-[#FF6B5A]/40 mb-6 group-hover:w-12 group-hover:bg-[#FF6B5A] transition-all duration-500" />
+              <h3 className="text-[15px] font-semibold text-white tracking-tight mb-3">
+                {feature.title}
+              </h3>
+              <p className="text-sm text-[#9C958E] leading-relaxed">
+                {feature.desc}
+              </p>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>

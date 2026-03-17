@@ -4,77 +4,97 @@ import { motion } from "framer-motion";
 
 export default function AppShowcase() {
   return (
-    <section className="py-32 md:py-40 overflow-hidden">
-      <div className="max-w-[1400px] mx-auto px-6 md:px-12">
+    <section className="py-32 md:py-44 overflow-hidden">
+      <div className="max-w-[1200px] mx-auto px-6">
         <motion.div
-          initial={{ y: 24, opacity: 0 }}
-          whileInView={{ y: 0, opacity: 1 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.7, ease: [0.32, 0.72, 0, 1] }}
-          className="text-center max-w-2xl mx-auto mb-20"
+          transition={{ duration: 0.8 }}
+          className="text-center mb-20"
         >
-          <span className="inline-flex items-center rounded-full bg-[#7A8B6F]/10 px-4 py-1.5 text-[11px] uppercase tracking-[0.2em] font-medium text-[#7A8B6F]">
+          <p className="text-[13px] tracking-[0.25em] uppercase text-[#FF6B5A] font-medium mb-5">
             See it in action
-          </span>
-          <h2 className="mt-6 text-3xl md:text-5xl font-bold tracking-tighter leading-[1.05]">
-            From video to recipe
-            <br />
-            <span className="text-[#8A8175]">in seconds.</span>
+          </p>
+          <h2
+            className="text-3xl md:text-[3.2rem] font-light tracking-[-0.02em] leading-[1.1] text-[#2D2926]"
+            style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
+          >
+            From video to recipe<br />in seconds.
           </h2>
         </motion.div>
 
-        {/* Video embed area */}
+        {/* Phone mockups — editorial arrangement */}
         <motion.div
-          initial={{ y: 40, opacity: 0, scale: 0.97 }}
-          whileInView={{ y: 0, opacity: 1, scale: 1 }}
+          initial={{ y: 40, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
           viewport={{ once: true, margin: "-60px" }}
-          transition={{ duration: 0.8, ease: [0.32, 0.72, 0, 1] }}
+          transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+          className="flex justify-center items-end gap-4 md:gap-8"
         >
-          {/* Outer shell */}
-          <div className="rounded-[2.5rem] bg-zinc-900/5 p-2 ring-1 ring-zinc-200/30 max-w-4xl mx-auto">
-            <div className="rounded-[calc(2.5rem-0.5rem)] overflow-hidden bg-zinc-900 aspect-video relative">
-              {/* Placeholder video area */}
-              <img
-                src="https://picsum.photos/seed/wechef-demo-vid/1280/720"
-                alt="WeChef app demonstration"
-                className="w-full h-full object-cover opacity-80"
-              />
-              {/* Play button overlay */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <motion.button
-                  whileHover={{ scale: 1.08 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="w-20 h-20 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center shadow-[0_16px_48px_-8px_rgba(0,0,0,0.3)] transition-all duration-300"
-                  aria-label="Play demo video"
-                >
-                  <svg width="24" height="28" viewBox="0 0 24 28" fill="none" className="ml-1">
-                    <path d="M24 14L0 28V0L24 14Z" fill="#C2491D" />
-                  </svg>
-                </motion.button>
+          {/* Left phone — tilted */}
+          <div className="hidden md:block -rotate-6 translate-y-8">
+            <div className="w-[200px] rounded-[2rem] bg-[#2D2926] p-2 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.15)]">
+              <div className="rounded-[calc(2rem-8px)] overflow-hidden aspect-[9/19.5] bg-white">
+                <img
+                  src="https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?w=400&q=80"
+                  alt=""
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* Center phone — hero */}
+          <div className="z-10">
+            <div className="w-[260px] md:w-[280px] rounded-[2.5rem] bg-[#2D2926] p-2.5 shadow-[0_40px_80px_-20px_rgba(0,0,0,0.2)]">
+              <div className="rounded-[calc(2.5rem-10px)] overflow-hidden aspect-[9/19.5] bg-white">
+                <img
+                  src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=560&q=80"
+                  alt="WeChef recipe view"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* Right phone — tilted */}
+          <div className="hidden md:block rotate-6 translate-y-8">
+            <div className="w-[200px] rounded-[2rem] bg-[#2D2926] p-2 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.15)]">
+              <div className="rounded-[calc(2rem-8px)] overflow-hidden aspect-[9/19.5] bg-white">
+                <img
+                  src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=400&q=80"
+                  alt=""
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
           </div>
         </motion.div>
 
-        {/* Stats row below video */}
+        {/* Minimal stats */}
         <motion.div
-          initial={{ y: 24, opacity: 0 }}
-          whileInView={{ y: 0, opacity: 1 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.7, delay: 0.2, ease: [0.32, 0.72, 0, 1] }}
-          className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-3xl mx-auto text-center"
+          transition={{ duration: 0.8, delay: 0.3 }}
+          className="mt-24 flex justify-center gap-16 md:gap-24"
         >
           {[
             { value: "12K+", label: "Recipes saved" },
-            { value: "3 sec", label: "Average extraction" },
-            { value: "94%", label: "Accuracy rate" },
-            { value: "30+", label: "Sources supported" },
-          ].map((stat, i) => (
-            <div key={stat.label}>
-              <div className="text-2xl md:text-3xl font-bold tracking-tighter text-zinc-900">
+            { value: "3s", label: "Avg extraction" },
+            { value: "94%", label: "Accuracy" },
+          ].map((stat) => (
+            <div key={stat.label} className="text-center">
+              <div
+                className="text-2xl md:text-3xl font-light tracking-tight text-[#2D2926]"
+                style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
+              >
                 {stat.value}
               </div>
-              <div className="mt-1 text-sm text-[#8A8175]">{stat.label}</div>
+              <div className="mt-1 text-[12px] tracking-[0.15em] uppercase text-[#9C958E] font-medium">
+                {stat.label}
+              </div>
             </div>
           ))}
         </motion.div>
